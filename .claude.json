@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "tex-mcp": {
+      "command": "python",
+      "args": ["server_launcher.py"],
+      "cwd": "C:\\Users\\DEVROOP\\Desktop\\tex-mcp"
+    }
+  }
+}
