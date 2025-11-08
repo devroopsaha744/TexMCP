@@ -9,6 +9,8 @@ Model Context Protocol). The default entrypoint is `run_server.py`.
 
 ## Demo
 ![Demo screenshot](assets/demo-1.png)
+![Demo screenshot](assets/demo-2.png)
+![Demo screenshot](assets/demo-3.png)
 ---
 
 ## Quick features
@@ -16,6 +18,13 @@ Model Context Protocol). The default entrypoint is `run_server.py`.
 - Render Jinja2 templates and compile to PDF
 - Designed to run as an MCP server for Claude Desktop and other MCP-capable clients
 
+Tools exposed by this MCP server
+- Total tools: 5
+  - render_latex_document — write LaTeX and optionally compile to PDF
+  - render_template_document — render a Jinja2 template and optionally compile
+  - list_templates — list available templates
+  - list_artifacts — list files produced in `src/artifacts/`
+  - get_template — return the raw contents of a template file so clients can inspect it before rendering
 ---
 
 ## Getting started (local development)
@@ -62,6 +71,27 @@ transport to `http` (see commented code) and run via `uv run` or `uvicorn`.
 
 Rendered outputs are placed in `src/artifacts/`. For each job you should see a `.tex` file and
 — if `pdflatex` is available — a matching `.pdf`.
+
+Templates
+ - Several example templates live in `src/mcp_server/templates/`. There are 15 templates included (for example `sample_invoice.tex.j2`, `sample_letter.tex.j2`, `sample_resume.tex.j2`). Use `list_templates` to get the full list programmatically. The templates are deliberately simple and ready to customize — add your own `.tex.j2` files to that folder to expand the catalog.
+
+Included templates (in `src/mcp_server/templates/`)
+
+- `default.tex.j2` (base example template)
+- `sample_invoice.tex.j2`
+- `sample_invoice2.tex.j2`
+- `sample_letter.tex.j2`
+- `sample_report.tex.j2`
+- `sample_resume.tex.j2`
+- `sample_presentation.tex.j2`
+- `sample_certificate.tex.j2`
+- `sample_coverletter.tex.j2`
+- `sample_poster.tex.j2`
+- `sample_thesis.tex.j2`
+- `sample_receipt.tex.j2`
+- `sample_recipe.tex.j2`
+- `sample_poem.tex.j2`
+- `sample_cv.tex.j2`
 
 ---
 

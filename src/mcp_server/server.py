@@ -177,3 +177,43 @@ __all__ = ["mcp"]
 
 if __name__ == "__main__":
     mcp.run()
+
+
+# Additional utility tools
+@mcp.tool(
+    name="list_artifacts",
+    description="List files in the artifacts directory.",
+    tags={"artifacts"},
+    annotations={"title": "List Artifacts", "readOnlyHint": True},
+)
+def list_artifacts() -> list[str]:
+    """Return the filenames present in the artifacts directory."""
+
+    return sorted(str(p.name) for p in ARTIFACTS_DIR.iterdir() if p.is_file())
+
+
+@mcp.tool(
+    name="get_template",
+    description="Return the raw contents of a template by filename.",
+    tags={"template"},
+    annotations={"title": "Get Template"},
+)
+def get_template(template_name: str) -> ToolResult:
+    """Return template source for a given template file name.
+
+    This allows clients (for example Claude) to retrieve and inspect the
+    template before using it in `render_template_document`.
+    """
+
+    path = TEMPLATE_DIR / template_name
+    if not path.exists() or not path.is_file():
+        raise ToolError(f"Template '{template_name}' not found")
+
+    content = path.read_text(encoding="utf-8")
+
+    return ToolResult(
+        content=[f"Template: {template_name}", content],
+        structured_content={"name": template_name, "content": content},
+    )
+
+

@@ -1,0 +1,96 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\begin{document}
+
+% Header
+\begin{center}
+	{\LARGE \textbf{{ name }}}\\
+	{{ title }} \\
+	\vspace{3pt}
+	\small{{ contact }} \\
+	\vspace{6pt}
+\end{center}
+
+% Summary
+\vspace{6pt}
+\noindent\textbf{Summary}
+\vspace{3pt}
+\noindent{{ summary }}
+
+\vspace{8pt}
+\noindent\textbf{Experience}
+\vspace{4pt}
+{% if experiences %}
+\begin{itemize}[leftmargin=*]
+{% for exp in experiences %}
+	\item \textbf{{ exp.title }} --- {{ exp.company }} \hfill {\small {{ exp.dates }}}\\
+	{% if exp.location %}\textit{{ exp.location }}\\{% endif %}
+	{% if exp.details %}
+	\begin{itemize}
+		{% for bullet in exp.details %}
+			\item {{ bullet }}
+		{% endfor %}
+	\end{itemize}
+	{% endif %}
+	\vspace{4pt}
+{% endfor %}
+\end{itemize}
+{% else %}
+No experience provided.
+{% endif %}
+
+\vspace{6pt}
+\noindent\textbf{Education}
+\vspace{4pt}
+{% if education %}
+\begin{itemize}[leftmargin=*]
+{% for ed in education %}
+	\item \textbf{{ ed.degree }} --- {{ ed.institution }} \hfill {\small {{ ed.year }}}\\
+	{% if ed.details %}\small {{ ed.details }}\\{% endif %}
+{% endfor %}
+\end{itemize}
+{% else %}
+No education provided.
+{% endif %}
+
+\vspace{6pt}
+\noindent\textbf{Projects}
+\vspace{4pt}
+{% if projects %}
+\begin{itemize}[leftmargin=*]
+{% for proj in projects %}
+	\item \textbf{{ proj.name }}{% if proj.link %} (\href{{{ proj.link }}}{link}){% endif %}\\
+	{{ proj.description }}\\
+{% endfor %}
+\end{itemize}
+{% else %}
+No projects provided.
+{% endif %}
+
+\vspace{6pt}
+\noindent\textbf{Skills}
+\vspace{4pt}
+{% if skills %}
+\begin{itemize}[leftmargin=*]
+	\item {{ skills | join(', ') }}
+\end{itemize}
+{% else %}
+No skills provided.
+{% endif %}
+
+\vspace{6pt}
+\noindent\textbf{Certifications}
+\vspace{4pt}
+{% if certifications %}
+\begin{itemize}[leftmargin=*]
+{% for c in certifications %}
+	\item {{ c }}
+{% endfor %}
+\end{itemize}
+{% else %}
+None listed.
+{% endif %}
+
+\end{document}
