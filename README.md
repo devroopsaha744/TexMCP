@@ -177,8 +177,6 @@ Security notes
 
 ---
 
----
-
 ## Contributing
 
 Thanks for wanting to contribute! See `CONTRIBUTING.md` for the development workflow, commit style, and how to open issues and pull requests.
