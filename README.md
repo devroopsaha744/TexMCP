@@ -1,9 +1,5 @@
 # FastMCP LaTeX Server (tex-mcp)
 
-<p align="center">
-  <img src="assets/Latex--Streamline-Simple-Icons.svg" alt="tex-mcp logo" width="160" />
-</p>
-
 A small FastMCP-based Microservice that renders LaTeX to PDF. The server exposes MCP tools
 to render raw LaTeX or templates and produces artifacts (a .tex file and  .pdf)
 under `src/artifacts/`.
@@ -190,8 +186,4 @@ Thanks for wanting to contribute! See `CONTRIBUTING.md` for the development work
 ## License
 
 This project is released under the MIT License — see `LICENSE`.
-
-
-> Powered by LaTeX. Logo © LaTeX Project, used under the LaTeX Project Public License.  
-> This project is not affiliated with or endorsed by the LaTeX Project.
 
