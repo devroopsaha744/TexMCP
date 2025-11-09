@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/devroopsaha744-texmcp-badge.png)](https://mseep.ai/app/devroopsaha744-texmcp)
+
 # FastMCP LaTeX Server (tex-mcp)
 
 A small FastMCP-based Microservice that renders LaTeX to PDF. The server exposes MCP tools
