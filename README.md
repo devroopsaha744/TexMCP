@@ -1,4 +1,6 @@
-[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/devroopsaha744-texmcp-badge.png)](https://mseep.ai/app/devroopsaha744-texmcp)
+<p align="center">
+  [![MseeP.ai Security Assessment Badge](https://mseep.net/pr/devroopsaha744-texmcp-badge.png)](https://mseep.ai/app/devroopsaha744-texmcp)
+</p>
 
 # FastMCP LaTeX Server (tex-mcp)
 
