@@ -1,5 +1,8 @@
 # FastMCP LaTeX Server (tex-mcp)
 
+<p align="center">
+  <img src="assets/Latex--Streamline-Simple-Icons.svg" alt="tex-mcp logo" width="160" />
+</p>
 
 A small FastMCP-based Microservice that renders LaTeX to PDF. The server exposes MCP tools
 to render raw LaTeX or templates and produces artifacts (a .tex file and  .pdf)
