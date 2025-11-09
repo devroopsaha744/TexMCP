@@ -190,3 +190,8 @@ Thanks for wanting to contribute! See `CONTRIBUTING.md` for the development work
 ## License
 
 This project is released under the MIT License — see `LICENSE`.
+
+
+> Powered by LaTeX. Logo © LaTeX Project, used under the LaTeX Project Public License.  
+> This project is not affiliated with or endorsed by the LaTeX Project.
+
